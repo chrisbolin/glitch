@@ -11,6 +11,9 @@ var SplitApp = React.createClass({
       <div className='app'>
         <div className='demo'>
           {this.renderBoxes(12)}
+          <div className='footer'>
+            <a href='http://bolin.co' target='_blank'>???</a>
+          </div>
         </div>
       </div>
     );

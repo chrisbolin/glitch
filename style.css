@@ -1,15 +1,24 @@
 body {
   margin: 0;
   background-color: #33aad9;
-  font-family: Lato;
+  font-family: monospace;
 }
 
 .demo {
-  max-width: 400px;
+  max-width: 384px;
   margin: 50px auto;
   text-align: center;
 }
 
 .container {
   display: inline-block;
+}
+
+.footer {
+  text-align: right;
+  margin: 10px 0;
+}
+
+a {
+  color: black;
 }
