@@ -12,34 +12,11 @@ var SplitApp = React.createClass({
         <div className='demo'>
           {this.renderBoxes(12)}
           <div className='footer'>
-            <a href='http://bolin.co' target='_blank'>???</a>
+            <a href='https://github.com/chrisbolin/glitch'>???</a>
           </div>
         </div>
       </div>
     );
-  },
-});
-
-var ElementCount = React.createClass({
-  getInitialState() {
-    return {
-      elementCount: 0,
-    };
-  },
-  componentWillMount() {
-    setInterval(function() {
-      var elementCount = document.getElementsByTagName("*").length;
-      this.setState({
-        elementCount: elementCount,
-      });
-    }.bind(this), 1000);
-  },
-  render(){
-    return (
-      <div>
-        {this.state.elementCount}
-      </div>
-    );  
   },
 });
 
