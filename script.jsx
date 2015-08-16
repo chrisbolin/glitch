@@ -1,28 +1,15 @@
 var SplitApp = React.createClass({
+  renderBoxes(num) {
+    var boxes = [];
+    for (var i = 0; i < num; i++) {
+      boxes.push(<Box key={i}/>);
+    }
+    return boxes;
+  },
   render() {
     return (
-      <div>
-        <Box/>
-        <Box/>
-        <Box/>
-        <Box/>
-        <Box/>
-        <Box/>
-        <Box/>
-        <Box/>
-        <Box/>
-        <Box/>
-        <Box/>
-        <Box/>
-        <Box/>
-        <Box/>
-        <Box/>
-        <Box/>
-        <Box/>
-        <Box/>
-        <Box/>
-        <Box/>
-        <Box/>
+      <div className='demo'>
+        {this.renderBoxes(9)}
       </div>
     );
   },
@@ -53,9 +40,11 @@ var Box = React.createClass({
     this.setState({split: false});
   },
   render() {
+    var color = Math.floor(Math.random() * 16777215).toString(16);
     var style = {
       width: this.props.dim,
       height: this.props.dim,
+      'backgroundColor': color,
     };
     return (
       this.state.split ? (
