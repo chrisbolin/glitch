@@ -2,6 +2,7 @@
     "ecmaFeatures": {
         "jsx": true,
         "objectLiteralShorthandMethods": true,
+        "arrowFunctions": true,
     },
     "rules": {
       "no-undef": 0,

@@ -1,11 +1,12 @@
 body {
   margin: 0;
   background-color: #33aad9;
+  font-family: Lato;
 }
 
 .demo {
   max-width: 400px;
-  margin: 100px auto;
+  margin: 50px auto;
   text-align: center;
 }
 

@@ -8,10 +8,35 @@ var SplitApp = React.createClass({
   },
   render() {
     return (
-      <div className='demo'>
-        {this.renderBoxes(9)}
+      <div className='app'>
+        <div className='demo'>
+          {this.renderBoxes(12)}
+        </div>
       </div>
     );
+  },
+});
+
+var ElementCount = React.createClass({
+  getInitialState() {
+    return {
+      elementCount: 0,
+    };
+  },
+  componentWillMount() {
+    setInterval(function() {
+      var elementCount = document.getElementsByTagName("*").length;
+      this.setState({
+        elementCount: elementCount,
+      });
+    }.bind(this), 1000);
+  },
+  render(){
+    return (
+      <div>
+        {this.state.elementCount}
+      </div>
+    );  
   },
 });
 
@@ -40,11 +65,12 @@ var Box = React.createClass({
     this.setState({split: false});
   },
   render() {
+    // http://www.paulirish.com/2009/random-hex-color-code-snippets/
     var color = Math.floor(Math.random() * 16777215).toString(16);
     var style = {
       width: this.props.dim,
       height: this.props.dim,
-      'backgroundColor': color,
+      backgroundColor: color,
     };
     return (
       this.state.split ? (
