@@ -1,5 +1,8 @@
 'use strict';
 
+var injectTapEventPlugin = require('react-tap-event-plugin');
+injectTapEventPlugin();
+
 var SplitApp = React.createClass({
   displayName: 'SplitApp',
 
@@ -76,7 +79,7 @@ var Box = React.createClass({
       React.createElement(Box, { dim: this.props.dim / 2 })
     ) : React.createElement('div', { className: 'container',
       style: style,
-      onClick: this.split,
+      onTouchTap: this.split,
       onMouseEnter: this.split });
   }
 });

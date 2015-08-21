@@ -1,3 +1,6 @@
+var injectTapEventPlugin = require('react-tap-event-plugin');
+injectTapEventPlugin();
+
 var SplitApp = React.createClass({
   renderBoxes(num) {
     var boxes = [];
@@ -64,7 +67,7 @@ var Box = React.createClass({
       ) : (
         <div className='container'
           style={style}
-          onClick={this.split}
+          onTouchTap={this.split}
           onMouseEnter={this.split}/>
       )
     );
