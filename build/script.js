@@ -1,74 +1,81 @@
-var SplitApp = React.createClass({displayName: "SplitApp",
-  renderBoxes(num) {
+'use strict';
+
+var SplitApp = React.createClass({
+  displayName: 'SplitApp',
+
+  renderBoxes: function renderBoxes(num) {
     var boxes = [];
     for (var i = 0; i < num; i++) {
-      boxes.push(React.createElement(Box, {key: i}));
+      boxes.push(React.createElement(Box, { key: i }));
     }
     return boxes;
   },
-  render() {
-    return (
-      React.createElement("div", {className: "app"}, 
-        React.createElement("div", {className: "demo"}, 
-          this.renderBoxes(12), 
-          React.createElement("div", {className: "footer"}, 
-            React.createElement("a", {href: "https://github.com/chrisbolin/glitch"}, "???")
+  render: function render() {
+    return React.createElement(
+      'div',
+      { className: 'app' },
+      React.createElement(
+        'div',
+        { className: 'demo' },
+        this.renderBoxes(12),
+        React.createElement(
+          'div',
+          { className: 'footer' },
+          React.createElement(
+            'a',
+            { href: 'https://github.com/chrisbolin/glitch' },
+            '???'
           )
         )
       )
     );
-  },
+  }
 });
 
-var Box = React.createClass({displayName: "Box",
+var Box = React.createClass({
+  displayName: 'Box',
+
   propTypes: {
     split: React.PropTypes.bool,
-    dim: React.PropTypes.number,
+    dim: React.PropTypes.number
   },
-  getDefaultProps() {
+  getDefaultProps: function getDefaultProps() {
     return {
       split: false,
-      dim: 128,
+      dim: 128
     };
   },
-  getInitialState() {
+  getInitialState: function getInitialState() {
     return {
-      split: false,
+      split: false
     };
   },
-  split(e) {
+  split: function split(e) {
     e.preventDefault();
-    this.setState({split: true});
+    this.setState({ split: true });
   },
-  unsplit(e) {
+  unsplit: function unsplit(e) {
     e.preventDefault();
-    this.setState({split: false});
+    this.setState({ split: false });
   },
-  render() {
+  render: function render() {
     // http://www.paulirish.com/2009/random-hex-color-code-snippets/
     var color = Math.floor(Math.random() * 16777215).toString(16);
     var style = {
       width: this.props.dim,
       height: this.props.dim,
-      backgroundColor: color,
+      backgroundColor: color
     };
-    return (
-      this.state.split ? (
-        React.createElement("div", {className: "container", onContextMenu: this.unsplit}, 
-          React.createElement(Box, {dim: this.props.dim / 2}), 
-          React.createElement(Box, {dim: this.props.dim / 2}), 
-          React.createElement("br", null), 
-          React.createElement(Box, {dim: this.props.dim / 2}), 
-          React.createElement(Box, {dim: this.props.dim / 2})
-        )
-      ) : (
-        React.createElement("div", {className: "container box", style: style, onMouseEnter: this.split}
-        )
-      )
-    );
-  },
+    return this.state.split ? React.createElement(
+      'div',
+      { className: 'container', onContextMenu: this.unsplit },
+      React.createElement(Box, { dim: this.props.dim / 2 }),
+      React.createElement(Box, { dim: this.props.dim / 2 }),
+      React.createElement('br', null),
+      React.createElement(Box, { dim: this.props.dim / 2 }),
+      React.createElement(Box, { dim: this.props.dim / 2 })
+    ) : React.createElement('div', { className: 'container box', style: style, onMouseEnter: this.split });
+  }
 });
 
-React.render(React.createElement(SplitApp, null),
-  document.body
-);
+React.render(React.createElement(SplitApp, null), document.body);
