@@ -74,7 +74,10 @@ var Box = React.createClass({
       React.createElement('br', null),
       React.createElement(Box, { dim: this.props.dim / 2 }),
       React.createElement(Box, { dim: this.props.dim / 2 })
-    ) : React.createElement('div', { className: 'container box', style: style, onMouseEnter: this.split });
+    ) : React.createElement('div', { className: 'container',
+      style: style,
+      onClick: this.split,
+      onMouseEnter: this.split });
   }
 });
 

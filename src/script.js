@@ -62,8 +62,10 @@ var Box = React.createClass({
           <Box dim={this.props.dim / 2}/>
         </div>
       ) : (
-        <div className='container box' style={style} onMouseEnter={this.split}>
-        </div>
+        <div className='container'
+          style={style}
+          onClick={this.split}
+          onMouseEnter={this.split}/>
       )
     );
   },
