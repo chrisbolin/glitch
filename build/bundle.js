@@ -4,6 +4,16 @@
 var injectTapEventPlugin = require('react-tap-event-plugin');
 injectTapEventPlugin();
 
+var getRandomColor = function getRandomColor() {
+  var getRandomHue = function getRandomHue(min, max) {
+    min = min || 0;
+    max = max || 255;
+    var number = min + Math.random() * (max - min);
+    return String('00' + Math.floor(number).toString(16)).slice(-2);
+  };
+  return '#' + getRandomHue(0) + getRandomHue(100) + getRandomHue(0);
+};
+
 var SplitApp = React.createClass({
   displayName: 'SplitApp',
 
@@ -118,7 +128,7 @@ var Box = React.createClass({
   },
   render: function render() {
     // http://www.paulirish.com/2009/random-hex-color-code-snippets/
-    var color = Math.floor(Math.random() * 16777215).toString(16);
+    var color = getRandomColor();
     var style = {
       width: this.props.dim,
       height: this.props.dim,
