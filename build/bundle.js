@@ -20,17 +20,71 @@ var SplitApp = React.createClass({
       { className: 'app' },
       React.createElement(
         'div',
-        { className: 'demo' },
+        { className: 'stage' },
         this.renderBoxes(12),
+        React.createElement(Footer, null)
+      )
+    );
+  }
+});
+
+var Footer = React.createClass({
+  displayName: 'Footer',
+
+  getInitialState: function getInitialState() {
+    return {
+      showAbout: false
+    };
+  },
+  toggle: function toggle() {
+    this.setState({
+      showAbout: !this.state.showAbout
+    });
+  },
+  render: function render() {
+    return React.createElement(
+      'div',
+      { className: 'footer' },
+      this.state.showAbout ? React.createElement(
+        'div',
+        null,
         React.createElement(
-          'div',
-          { className: 'footer' },
+          'p',
+          null,
+          'glitch is interactive art.'
+        ),
+        React.createElement(
+          'p',
+          null,
+          'mouseover, tap, right-click.'
+        ),
+        React.createElement(
+          'p',
+          null,
           React.createElement(
             'a',
             { href: 'https://github.com/chrisbolin/glitch' },
-            '???'
+            'source code'
+          )
+        ),
+        React.createElement(
+          'p',
+          null,
+          '© 2015 chris bolin'
+        ),
+        React.createElement(
+          'p',
+          null,
+          React.createElement(
+            'a',
+            { onClick: this.toggle },
+            'hide'
           )
         )
+      ) : React.createElement(
+        'a',
+        { onClick: this.toggle },
+        '???'
       )
     );
   }

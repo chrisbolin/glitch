@@ -4,7 +4,7 @@ body {
   font-family: monospace;
 }
 
-.demo {
+.stage {
   max-width: 384px;
   margin: 50px auto;
   text-align: center;
@@ -18,8 +18,14 @@ body {
 .footer {
   text-align: right;
   margin: 10px 0;
+  text-align: center;
 }
 
 a {
   color: black;
+  text-decoration: underline;
+}
+
+a:hover {
+  cursor: pointer;
 }

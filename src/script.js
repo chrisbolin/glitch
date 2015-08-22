@@ -12,13 +12,45 @@ var SplitApp = React.createClass({
   render() {
     return (
       <div className='app'>
-        <div className='demo'>
+        <div className='stage'>
           {this.renderBoxes(12)}
-          <div className='footer'>
-            <a href='https://github.com/chrisbolin/glitch'>???</a>
-          </div>
+          <Footer/>
         </div>
       </div>
+    );
+  },
+});
+
+var Footer = React.createClass({
+  getInitialState() {
+    return ({
+      showAbout: false,
+    });
+  },
+  toggle() {
+    this.setState({
+      showAbout: !this.state.showAbout,
+    });
+  },
+  render() {
+    return (
+      <div className='footer'>
+        {this.state.showAbout ? (
+          <div>
+            <p>glitch is interactive art.</p>
+            <p>mouseover, tap, right-click.</p>
+            <p>
+              <a href='https://github.com/chrisbolin/glitch'>
+                source code
+              </a>
+            </p>
+            <p>&copy; 2015 chris bolin</p>
+            <p><a onClick={this.toggle}>hide</a></p>
+          </div>
+        ) : (
+          <a onClick={this.toggle}>???</a>
+        )}
+      </div>      
     );
   },
 });
