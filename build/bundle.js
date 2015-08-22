@@ -56,7 +56,7 @@ var Footer = React.createClass({
         React.createElement(
           'p',
           null,
-          'mouseover, tap, right-click.'
+          'hover, tap, right-click.'
         ),
         React.createElement(
           'p',

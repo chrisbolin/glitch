@@ -38,7 +38,7 @@ var Footer = React.createClass({
         {this.state.showAbout ? (
           <div>
             <p>glitch is interactive art.</p>
-            <p>mouseover, tap, right-click.</p>
+            <p>hover, tap, right-click.</p>
             <p>
               <a href='https://github.com/chrisbolin/glitch'>
                 source code
