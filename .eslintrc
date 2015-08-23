@@ -1,22 +1,22 @@
 {
-    "ecmaFeatures": {
-        "jsx": true,
-        "objectLiteralShorthandMethods": true,
-        "arrowFunctions": true,
-    },
-    "rules": {
-      "no-undef": 0,
-      "comma-dangle": 0,
-      "no-underscore-dangle": 0,
-      "quotes": 0,
-      "strict": 0,
-      "no-console": 0,
-      "no-unused-vars": 0,
-      "no-trailing-spaces": 0,
-      "new-cap": 0,
-      "camelcase": 0,
-      "no-extra-boolean-cast": 0,
-      "consistent-return": 0,
-      "no-alert": 0,
-    }
+  "ecmaFeatures": {
+      "jsx": true,
+      "objectLiteralShorthandMethods": true,
+      "arrowFunctions": true,
+  },
+  "rules": {
+    "no-undef": 0,
+    "comma-dangle": 0,
+    "no-underscore-dangle": 0,
+    "quotes": 0,
+    "strict": 0,
+    "no-console": 0,
+    "no-unused-vars": 0,
+    "no-trailing-spaces": 0,
+    "new-cap": 0,
+    "camelcase": 0,
+    "no-extra-boolean-cast": 0,
+    "consistent-return": 0,
+    "no-alert": 0,
+  }
 }
