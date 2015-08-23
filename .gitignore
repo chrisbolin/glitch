@@ -1,3 +1,4 @@
 .module-cache
+*local*
 node_modules/
 build/script.js
