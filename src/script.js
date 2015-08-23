@@ -60,7 +60,7 @@ var Footer = React.createClass({
         ) : (
           <a onClick={this.toggle}>???</a>
         )}
-      </div>      
+      </div>
     );
   },
 });
